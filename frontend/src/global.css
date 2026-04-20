@@ -1,3 +1,105 @@
 @import "tailwindcss";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
+@import "../node_modules/material-symbols/outlined.css";
+@import "../node_modules/flowbite-datepicker/dist//css/datepicker.css";
+@import "../node_modules/flag-icons/css/flag-icons.min.css";
+
+@theme {
+  --breakpoint-xs: 640px;
+  --breakpoint-sm: 768px;
+  --breakpoint-md: 1280px;
+  --breakpoint-lg: 1536px;
+  --breakpoint-xl: 1920px;
+}
+
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: false;
+  prefersdark: false;
+  color-scheme: "light";
+  --color-base-100: oklch(97% 0.013 236.62);
+  --color-base-200: oklch(95% 0.026 236.824);
+  --color-base-300: oklch(90% 0.058 230.902);
+  --color-base-content: oklch(0% 0 0);
+  --color-primary: oklch(58% 0.158 241.966);
+  --color-primary-content: oklch(100% 0 0);
+  --color-secondary: oklch(74% 0.16 232.661);
+  --color-secondary-content: oklch(100% 0 0);
+  --color-accent: oklch(76% 0.233 130.85);
+  --color-accent-content: oklch(100% 0 0);
+  --color-neutral: oklch(100% 0 0);
+  --color-neutral-content: oklch(12% 0.042 264.695);
+  --color-info: oklch(78% 0.154 211.53);
+  --color-info-content: oklch(100% 0 0);
+  --color-success: oklch(79% 0.209 151.711);
+  --color-success-content: oklch(100% 0 0);
+  --color-warning: oklch(82% 0.189 84.429);
+  --color-warning-content: oklch(100% 0 0);
+  --color-error: oklch(70% 0.191 22.216);
+  --color-error-content: oklch(100% 0 0);
+  --radius-selector: 0.25rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.25rem;
+  --size-selector: 0.1875rem;
+  --size-field: 0.1875rem;
+  --border: 0.5px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  default: false;
+  prefersdark: false;
+  color-scheme: "dark";
+  --color-base-100: oklch(50% 0.134 242.749);
+  --color-base-200: oklch(44% 0.11 240.79);
+  --color-base-300: oklch(39% 0.09 240.876);
+  --color-base-content: oklch(100% 0 0);
+  --color-primary: oklch(58% 0.158 241.966);
+  --color-primary-content: oklch(100% 0 0);
+  --color-secondary: oklch(74% 0.16 232.661);
+  --color-secondary-content: oklch(100% 0 0);
+  --color-accent: oklch(76% 0.233 130.85);
+  --color-accent-content: oklch(100% 0 0);
+  --color-neutral: oklch(29% 0.066 243.157);
+  --color-neutral-content: oklch(100% 0 0);
+  --color-info: oklch(78% 0.154 211.53);
+  --color-info-content: oklch(100% 0 0);
+  --color-success: oklch(79% 0.209 151.711);
+  --color-success-content: oklch(100% 0 0);
+  --color-warning: oklch(82% 0.189 84.429);
+  --color-warning-content: oklch(100% 0 0);
+  --color-error: oklch(70% 0.191 22.216);
+  --color-error-content: oklch(100% 0 0);
+  --radius-selector: 0.25rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.25rem;
+  --size-selector: 0.1875rem;
+  --size-field: 0.1875rem;
+  --border: 0.5px;
+  --depth: 0;
+  --noise: 0;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 200,
+  'GRAD' 0,
+  'opsz' 24
+}
 
 
+/* Chrome, Edge, Safari */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type="date"]::-moz-calendar-picker-indicator {
+  display: none;
+}

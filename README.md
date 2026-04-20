@@ -1,68 +1,69 @@
-# Kratia
+<div align="center">
+  <img src="./assets/logo.png" alt="Kratia Logo" width="120" />
+  <h1>Kratia ERP</h1>
+  <p><strong>The High-Performance Modular ERP for Modern Governance</strong></p>
 
-![Kratia Banner](https://img.shields.io/badge/Architecture-Modular_Monorepo-blueviolet?style=for-the-badge)
-![Built with Bun](https://img.shields.io/badge/Runtime-Bun-black?style=for-the-badge&logo=bun)
-![Qwik](https://img.shields.io/badge/Frontend-Qwik-006AFF?style=for-the-badge&logo=qwik)
-![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-336791?style=for-the-badge&logo=postgresql)
+  [![Demo Frontend](https://img.shields.io/badge/Live_Demo-Frontend-006AFF?style=for-the-badge&logo=qwik)](https://erp.kratia.org)
+  [![Demo Backend](https://img.shields.io/badge/Live_Demo-Backend-black?style=for-the-badge&logo=bun)](https://api.kratia.org)
+  <br />
+  ![Bun](https://img.shields.io/badge/Runtime-Bun-black?style=flat-square&logo=bun)
+  ![TypeScript](https://img.shields.io/badge/Language-TypeScript-3178C6?style=flat-square&logo=typescript)
+  ![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-336791?style=flat-square&logo=postgresql)
+</div>
 
-**Kratia** is a high-performance, modular ERP infrastructure designed for modern enterprise needs. Built with a "Type-First" philosophy, it leverages a unified SDK to ensure seamless consistency between its high-velocity backend and its ultra-fast, resumable frontend.
+---
 
-## 🏗 Architecture
+## 🏛 Ecosystem Architecture
 
-Kratia is organized as a **Bun Monorepo**, ensuring atomic development and unified dependency management:
+Kratia is built as a **Type-First Monorepo**, ensuring total synchronization between the core logic and the user interface.
 
-- **`frontend/`**: Powered by **Qwik City**, delivering zero-bundle-size initial loads and instant interactivity.
-- **`backend/`**: A lightweight, ultra-fast API server running on **Bun**, utilizing **Kysely** for type-safe database interactions.
-- **`sdk/`**: The heart of the system. Contains shared types, validation schemas (Valibot), and unified business logic used by both ends.
+- **[Frontend](./frontend)**: Powered by **Qwik City**. Ultra-fast, resumable UI with zero hydration overhead.
+- **[Backend](./backend)**: High-velocity API built on **Bun** & **Kysely**. Designed for massive throughput and atomic auditing.
+- **[SDK](./sdk)**: The single source of truth. Shared schemas, validation rules, and business logic.
 
 ## 🚀 Key Features
 
-- **Total Modularity**: Functional units are isolated, allowing for independent scaling and maintenance.
-- **Universal Auditing**: Built-in atomic transaction logging for every system change.
-- **Unified Validation**: Write your schemas once in the SDK; enforce them everywhere (API & UI).
-- **Type-Safe SQL**: No more string-based queries. Every database interaction is validated at compile time.
-- **Resumable UI**: Leveraging Qwik's unique serialization to eliminate hydration overhead.
+- **⚡ Zero-Latency UX**: Leveraging Qwik's resumability for instant-on applications.
+- **🛡️ Type-Safe Everything**: SQL queries, API contracts, and form validations are all unified in the SDK.
+- **📊 Universal Auditing**: Every system change is tracked and logged at the database level.
+- **🧩 Atomic Modularity**: Plug-and-play modules for finance, inventory, and human resources.
 
 ## 🛠 Tech Stack
 
-- **Runtime**: [Bun](https://bun.sh/)
-- **Frontend**: [Qwik](https://qwik.dev/)
-- **ORM/Query Builder**: [Kysely](https://kysely.dev/)
-- **Validation**: [Valibot](https://valibot.io/)
-- **Database**: PostgreSQL
-- **Language**: TypeScript (Strict Mode)
+| Layer | Technology |
+| :--- | :--- |
+| **Runtime** | [Bun](https://bun.sh/) |
+| **Frontend** | [Qwik](https://qwik.dev/) + [Tailwind CSS v4](https://tailwindcss.com/) |
+| **Database** | [PostgreSQL](https://www.postgresql.org/) + [Kysely](https://kysely.dev/) |
+| **Validation** | [Valibot](https://valibot.io/) |
+| **State/Forms** | [Modular Forms](https://modularforms.dev/) |
 
-## 🚦 Getting Started
+## 🏁 Quick Start
 
 ### Prerequisites
 
-- [Bun](https://bun.sh/) installed on your machine.
+- [Bun](https://bun.sh/) (v1.1+)
 
 ### Installation
 
 ```bash
-# Clone the repository
-git clone https://github.com/kratia-org/kratia.git
-cd kratia
+# Clone & Enter
+git clone https://github.com/kratia-org/kratia.git && cd kratia
 
-# Install dependencies for all workspaces
+# Install all workspace dependencies
 bun install
 ```
 
 ### Development
 
-Run all workspaces simultaneously:
-
 ```bash
+# Start all services (Frontend, Backend, SDK)
 bun dev
 ```
 
-Or target a specific workspace:
+---
 
-```bash
-bun --filter '@kratia/backend' dev
-```
-
-## 📜 License
-
-This project is private and confidential. Created by [fromero2408](https://github.com/fromero2408).
+<div align="center">
+  <p>Built with ❤️ by the Kratia Team</p>
+  <a href="https://github.com/kratia-org">GitHub</a> • <a href="https://erp.kratia.org">Website</a> • <a href="https://api.kratia.org">API Documentation</a>
+</div>

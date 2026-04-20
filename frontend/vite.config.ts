@@ -8,12 +8,16 @@ import { qwikCity } from "@builder.io/qwik-city/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import pkg from "./package.json";
 import tailwindcss from "@tailwindcss/vite";
+
 type PkgDep = Record<string, string>;
+
 const { dependencies = {}, devDependencies = {} } = pkg as any as {
   dependencies: PkgDep;
   devDependencies: PkgDep;
   [key: string]: unknown;
 };
+
+
 errorOnDuplicatesPkgDeps(devDependencies, dependencies);
 /**
  * Note that Vite normally starts from `index.html` but the qwikCity plugin makes start at `src/entry.ssr.tsx` instead.
@@ -21,6 +25,7 @@ errorOnDuplicatesPkgDeps(devDependencies, dependencies);
 
 export default defineConfig(({ command, mode }): UserConfig => {
   return {
+    publicDir: "public",
     plugins: [
       qwikCity(),
       qwikVite(),
@@ -50,6 +55,8 @@ export default defineConfig(({ command, mode }): UserConfig => {
     //       }
     //     : undefined,
     server: {
+      allowedHosts: ["erp.kratia.org"],
+      host: true,
       headers: {
         // Don't cache the server response in dev mode
         "Cache-Control": "public, max-age=0",

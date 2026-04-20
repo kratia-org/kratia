@@ -1,16 +1,23 @@
 {
   "name": "@kratia/backend",
-  "module": "index.ts",
+  "module": "server.ts",
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "bun --watch run server.ts",
-    "start": "bun run index.ts"
+    "dev": "BUN_ENV=development bun --watch run server.ts",
+    "start": "bun run server.ts"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/pg": "^8.20.0"
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "dependencies": {
+    "@valibot/to-json-schema": "^1.6.0",
+    "kafkajs": "^2.2.4",
+    "kysely": "^0.28.16",
+    "pg": "^8.20.0"
   }
 }
